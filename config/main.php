@@ -2,4 +2,5 @@
 
 $app->setConfig('siteName', 'Swiftlet');
 
-// Add your own configuration values here or in a separate file
+## Test config
+$app->setConfig('reddit_pics_url', 'http://www.reddit.com/r/pics.xml');

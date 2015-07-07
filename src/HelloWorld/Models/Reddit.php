@@ -17,16 +17,6 @@ class Reddit extends ModelAbstract
     protected $xmlFeed;
     
     /**
-     * 
-     */
-    public function __construct()
-    {
-        $url = $this->app->getConfig('reddit_pics_url');
-        
-        $this->loadXml($url);
-    }
-    
-    /**
      * Load xml feed
      * 
      * @param string $url
@@ -36,7 +26,7 @@ class Reddit extends ModelAbstract
     {
         $this->xmlFeed = simplexml_load_file($url);
         
-        return true;
+        return $this;
     }
     
     /**

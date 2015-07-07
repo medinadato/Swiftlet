@@ -19,11 +19,14 @@ class Image extends ControllerAbstract
      */
     public function show()
     {
+        $url = $this->app->getConfig('reddit_pics_url');
+        
         // Model instance
         $reddit = new RedditModel;
 
         // Feed item
-        $this->view->redditItem = $reddit->getLastItem();
+        $this->view->redditItem = $reddit->loadXml($url)
+                ->getLastItem();
     }
     
 }
